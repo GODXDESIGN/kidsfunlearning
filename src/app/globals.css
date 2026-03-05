@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Soft Blue -> Focus */
+  --color-focus: #e0f2fe;
+  /* sky-100 */
+  /* Warm Yellow -> Energy */
+  --color-energy: #fef08a;
+  /* yellow-200 */
+  /* Gentle Green -> Calm */
+  --color-calm: #dcfce7;
+  /* green-100 */
+  /* Coral -> Reward */
+  --color-reward: #fecdd3;
+  /* rose-200 */
+
+  --background: var(--color-focus);
+  --foreground: #1e293b;
+  /* slate-800 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    /* slate-900 */
+    --foreground: #f8fafc;
+    /* slate-50 */
+  }
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-fun {
+  font-family: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base kid-friendly animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-xl rounded-3xl;
+  }
+}
